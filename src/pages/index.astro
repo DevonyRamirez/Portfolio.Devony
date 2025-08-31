@@ -1,11 +1,77 @@
 ---
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
+import Badge from '../components/Badge.astro'
+import LinkedinIcon from '../components/icons/Linkedin.astro'
+import SocialPill from '../components/SocialPill.astro';
+import Github from '../components/icons/GitHub.astro';
+import Gmail from '../components/icons/Gmail.astro';
+import Instagram from '../components/icons/instagram.astro';
+import Experiencie from '../components/Experiencie.astro';
+import SectionContainer from '../components/SeccionContainer.astro';
+import Experiencia from '../components/icons/Experiencia.astro';
+import ProyectosIcon from '../components/icons/ProyectosIcon.astro';
+import Projects from '../components/Projects.astro'
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
 	<Welcome />
+	<main class="px-4">
+		<SectionContainer class="py-24 pb-24">
+			<img 
+				class="rounded-full w-20 h-20 mb-5"
+				src="https://avatars.githubusercontent.com/u/146208885?v=4/Devony.jpg" 
+				alt="devony photo"/>
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				♡ Soy Devony Ramírez
+	
+				<a href="https://www.linkedin.com/in/devony-ramirez-b9153b2a4"
+					target="_blanck" 
+					rel="noopener" 
+					class="flex justify-center items-center">
+					<Badge>Disponible para aprender</Badge>
+				</a>
+			</h1>
+
+			<h2 class="text-xl lg:text-2xl opacity-90 text-wrap max-m-[700px]">
+				Estudiante de <span class="text-pink-300">Ingeniería Informática</span> en la UCAB. De Caracas, Venezuela. </h2>
+
+			<nav class="flex gap-4 mt-5 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/devony-ramirez-b9153b2a4">
+					<LinkedinIcon slot="icon" class=" size-4 md:size-6"/>
+					Linkedin
+				</SocialPill>
+				<SocialPill href="https://github.com/DevonyRamirez">
+					<Github slot="icon" class=" size-4 md:size-6"/>
+					GitHub
+				</SocialPill>
+				<SocialPill href="mailto:duodevo@gmail.com">
+					<Gmail slot="icon" class=" size-4 md:size-6"/>
+					duodevo@gmail.com
+				</SocialPill>
+				<SocialPill href="https://www.instagram.com/ny_devo">
+					<Instagram slot="icon" class=" size-4 md:size-6"/>
+					Instagram
+				</SocialPill>								
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold mb-5 flex gap-x-2 items-center">
+				<Experiencia class="size-9"/>
+				Experiencia laboral
+			</h2>
+			<Experiencie/>
+		</SectionContainer>
+
+		<SectionContainer id="proyectos">
+			<h2 class="text-3xl font-semibold mb-5 flex gap-x-2 items-center">
+				<ProyectosIcon class="size-9"/>
+				Proyectos
+			</h2>
+			<Projects/>
+		</SectionContainer>
+	</main>
 </Layout>

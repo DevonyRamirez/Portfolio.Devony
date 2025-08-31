@@ -1,0 +1,35 @@
+---
+const TAGS=[
+    {
+        TAILWIND:{
+            name:'Tailwind CSS',
+            class: 'bg-white text-[#73bcf6]',
+        }
+    }
+]
+const PROJECTS=[
+    {
+        title: "Devony Portfolio",
+        description: "Mi portafolio personal construido con Astro y TailwindCSS.",
+        link: '#',
+        github: '#',
+        image:'/projects/svgp.webp',
+        tags: [  ]
+    }
+]
+---
+   
+{
+    PROJECTS.map(({title,description, tags,image }) =>(
+        <article>
+            <h3 class="text-2xl font-semibold text-pink-300/80 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul>
+                {tags.map(tag =>(
+                    <li>{tag}</li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2xl shadow-pink-200" src={image} alt={`Captura de pantalla del proyectp ${image}`} />
+        </article>
+    ))
+}
